@@ -3,7 +3,9 @@ import pickle
 import pandas as pd
 database = pickle.load(open('data/movies.pkl', 'rb'))
 # Load split similarity matrices and combine them
-similarity_part1 = pickle.load(open('data/similarity_pt1.pkl', 'rb
+similarity_part1 = pickle.load(open('data/similarity_pt1.pkl', 'rb'))
+similarity_part2 = pickle.load(open('data/similarity_pt2.pkl', 'rb'))
+similarity = similarity_part1 + similarity_part2
 
 def recommend(movie):
 	movie_index = database[database['title'] == movie].index[0]
